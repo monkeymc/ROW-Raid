@@ -1,0 +1,72 @@
+{
+ "arenaPx": 600,
+ "multiplier": 1.5,
+ "pad": 3,
+ "settleMs": 900,
+ "playerStyle": "icon",
+ "arena": {
+  "shape": "circle",
+  "bgColor": "#24223a",
+  "gridColor": "#4f5296",
+  "strokeWidth": 2,
+  "gridX": 0,
+  "gridY": 0,
+  "gridRadial": 3,
+  "gridSpoke": 8,
+  "gridRotation": 0
+ },
+ "palette": {
+  "danger": "#ff4d4d55",
+  "dangerEdge": "#ff6b6b",
+  "safe": "#3ddc8426",
+  "safeEdge": "#4be08f",
+  "blue": "#4f8dff38",
+  "blueEdge": "#7fb0ff",
+  "water": "#35c6e870",
+  "waterEdge": "#9be9ff",
+  "gold": "#ffc94d2e",
+  "goldEdge": "#ffd36b",
+  "goldRim": "#ffc94d66",
+  "goldRimEdge": "#ffe08f",
+  "portal": "#3fa0ffaa",
+  "portalEdge": "#bfe0ff",
+  "minion": "#9b4dff",
+  "minionEdge": "#e0c6ff",
+  "puddle": "#5b2a8a88",
+  "puddleEdge": "#c39bff",
+  "ball": "#5aa9ff",
+  "ballEdge": "#bfe0ff",
+  "beam": "#7fe9ff",
+  "arrow": "#ffffff",
+  "label": "#ffffff",
+  "stroke": "#000000",
+  "warn": "#f6d365"
+ },
+ "roles": {
+  "T": {
+   "asset": "game/ffxiv/job/role_tank.png",
+   "style": "round",
+   "size": 10
+  },
+  "H": {
+   "asset": "game/ffxiv/job/role_healer.png",
+   "style": "round",
+   "size": 10
+  },
+  "D1": {
+   "asset": "game/ffxiv/job/role_melee.png",
+   "style": "round",
+   "size": 10
+  },
+  "D2": {
+   "asset": "game/ffxiv/job/role_ranged.png",
+   "style": "round",
+   "size": 10
+  },
+  "D3": {
+   "asset": "game/ffxiv/job/role_ranged.png",
+   "style": "round",
+   "size": 10
+  }
+ }
+}

@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Baron's Night Banquet</title>
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #1f1e23; --panel: #27262b; --cell: #302d36; --line: #44434d;
+  --text: #e6e1e8; --head: #f5f6fa; --muted: #959396; --link: #2c84fa;
+  --warn: #f0b35a; --gold: #e3b341; --red: #e5534b;
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans Thai", sans-serif;
+  --diag: 600px;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body { background: var(--bg); color: var(--text); font: 15px/1.5 var(--font); }
+a { color: var(--link); }
+.th { font-family: "Noto Sans Thai", var(--font); }
+button { font: inherit; color: inherit; }
+
+.app { height: 100dvh; display: grid; grid-template-rows: auto auto minmax(0, 1fr); grid-template-columns: minmax(0, 1fr); overflow: hidden; }
+.top { position: relative; z-index: 3; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 18px; padding: 8px 18px; border-bottom: 1px solid var(--line); background: var(--panel); white-space: nowrap; }
+.top h1 { margin: 0; font-size: 20px; font-weight: 500; color: var(--head); }
+.loadout { flex: 1 1 0; min-width: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; font-size: 12.5px; }
+.els, .cards { display: flex; flex-wrap: wrap; gap: 4px; }
+.el { display: inline-flex; align-items: center; gap: 5px; border: 1px solid var(--line); border-radius: 4px; background: var(--cell); padding: 1px 8px 1px 6px; cursor: pointer; color: var(--muted); }
+.el i { width: 10px; height: 10px; border-radius: 50%; background: var(--c); }
+.el img { width: 16px; height: 16px; }
+.el small { font-size: 10px; letter-spacing: .06em; text-transform: uppercase; color: var(--gold); }
+.el.on { background: color-mix(in srgb, var(--c) 32%, var(--cell)); border-color: var(--c); color: var(--head); }
+.use { color: var(--muted); cursor: help; } .use b { color: var(--head); font-weight: 600; }
+.lbl { font-size: 10.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); align-self: center; margin: 0 2px 0 6px; }
+.lbl:first-child { margin-left: 0; }
+.card { position: relative; display: inline-flex; align-items: center; gap: 5px; background: var(--cell); border: 1px solid var(--line); border-radius: 4px; padding: 1px 8px; color: var(--text); text-decoration: none; }
+.card img { width: 18px; height: 18px; }
+.card.def { color: var(--muted); border-style: dashed; cursor: help; }
+.card.def .tip { left: auto; right: 0; }
+.card .tip { display: none; position: absolute; left: 0; top: calc(100% + 6px); width: max-content; max-width: 260px; white-space: normal; background: #111; border: 1px solid var(--line); border-radius: 4px; padding: 8px 10px; font-size: 13px; color: var(--text); }
+.card:hover .tip, .card:focus .tip { display: block; }
+
+.fight { padding: 8px 18px 6px; border-bottom: 1px solid var(--line); background: #232227; }
+.tabs { display: flex; gap: 6px; align-items: center; overflow-x: auto; }
+.tab { flex: none; border: 1px solid var(--line); border-left: 4px solid var(--c); background: var(--cell); border-radius: 4px; padding: 2px 10px; font-size: 13px; cursor: pointer; color: var(--muted); white-space: nowrap; }
+.tab b { color: var(--text); font-weight: 600; margin-right: 6px; font-variant-numeric: tabular-nums; }
+.tab.on { background: color-mix(in srgb, var(--c) 24%, var(--cell)); border-color: var(--c); color: var(--head); }
+.legend { margin-left: auto; flex: none; font-size: 11.5px; color: var(--muted); white-space: nowrap; }
+.legend i { display: inline-block; width: 8px; height: 8px; transform: rotate(45deg); background: var(--gold); margin: 0 5px 0 10px; }
+.legend u { text-decoration: none; display: inline-block; width: 18px; height: 9px; background: rgba(229, 83, 75, .25); border-left: 1px dashed var(--red); margin: 0 5px 0 10px; vertical-align: -1px; }
+.tlwrap { overflow-x: auto; overflow-y: hidden; }
+.tl { position: relative; height: 116px; margin: 8px 6px 0; min-width: 940px; }
+.enrage { position: absolute; top: 0; bottom: 16px; left: 80%; right: 0; background: rgba(229, 83, 75, .10); border-left: 1px dashed rgba(229, 83, 75, .6); }
+.grid { position: absolute; top: 0; bottom: 16px; width: 1px; background: rgba(255, 255, 255, .06); }
+.grid.sm { background: rgba(227, 179, 65, .22); }
+.axis { position: absolute; left: 0; right: 0; top: 94px; height: 4px; border-radius: 2px; background: linear-gradient(90deg, #4a4952, #3a3940 78%, #6a2f33 80%, #7a3035); }
+.pct { position: absolute; top: 102px; transform: translateX(-50%); font-size: 10.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.pct.sm { color: var(--gold); }
+.sm-mark { position: absolute; top: 90px; width: 12px; height: 12px; margin-left: -6px; transform: rotate(45deg); background: var(--gold); border: 2px solid #232227; cursor: pointer; opacity: .7; padding: 0; }
+.sm-mark.on { opacity: 1; box-shadow: 0 0 0 2px rgba(227, 179, 65, .5); }
+.sm-mark.here { background: #fff1bf; box-shadow: 0 0 0 3px var(--gold); }
+.chip { position: absolute; height: 21px; line-height: 19px; font-size: 12px; padding: 0 7px; border-radius: 3px; background: var(--cell); border: 1px solid var(--line); border-left: 3px solid var(--c); white-space: nowrap; cursor: pointer; opacity: .6; color: var(--text); }
+.chip b { font-weight: 400; color: var(--muted); margin-left: 5px; font-variant-numeric: tabular-nums; }
+.chip.big { font-weight: 600; }
+.chip.on { opacity: 1; background: color-mix(in srgb, var(--c) 26%, var(--cell)); border-color: var(--c); color: var(--head); }
+.chip.on b { color: var(--text); }
+.chip.here { box-shadow: 0 0 0 2px var(--head); }
+.stem { position: absolute; width: 1px; background: var(--c); opacity: .35; pointer-events: none; }
+.stem.on { opacity: 1; }
+.evdot { position: absolute; top: 92px; width: 8px; height: 8px; margin-left: -4px; border-radius: 50%; background: var(--c); opacity: .6; pointer-events: none; }
+.evdot.on { opacity: 1; box-shadow: 0 0 0 2px #232227; }
+
+.body { display: flex; min-height: 0; }
+.stage { flex: none; padding: 12px 18px 10px; display: grid; gap: 10px; align-content: start; }
+.frame { position: relative; width: var(--diag); height: var(--diag); background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 8px; }
+.frame img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.nav-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 40px; height: 64px; border-radius: 4px; border: 1px solid var(--line); background: rgba(39, 38, 43, .85); cursor: pointer; font-size: 22px; }
+.nav-btn.prev { left: 8px; } .nav-btn.next { right: 8px; }
+.nav-btn:disabled { opacity: .3; cursor: default; }
+.vswitch { position: absolute; top: 14px; left: 50%; transform: translateX(-50%); display: flex; background: rgba(31, 30, 35, .92); border: 1px solid var(--line); border-radius: 999px; padding: 3px; white-space: nowrap; }
+.vswitch[hidden] { display: none; }
+.vswitch button { border: 0; background: none; padding: 3px 12px; border-radius: 999px; cursor: pointer; font-size: 12.5px; color: var(--muted); }
+.vswitch button.on { background: var(--link); color: #fff; }
+.controls { display: flex; align-items: center; gap: 10px; justify-content: center; height: 28px; }
+.dots { display: flex; gap: 6px; }
+.dot { width: 30px; height: 26px; border-radius: 4px; border: 1px solid var(--line); background: var(--cell); cursor: pointer; font-size: 12.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.dot.on { border-color: var(--link); background: var(--link); color: #fff; }
+.play { border: 1px solid var(--line); background: var(--cell); border-radius: 4px; padding: 3px 12px; cursor: pointer; font-size: 13px; }
+.play[aria-pressed="true"] { border-color: var(--link); color: var(--head); }
+.keys { color: var(--muted); font-size: 12px; white-space: nowrap; }
+kbd { border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 3px; padding: 0 5px; font: 11px var(--font); }
+
+.side { flex: 1; min-width: 0; border-left: 1px solid var(--line); padding: 12px 18px 0; display: grid; grid-template-rows: auto minmax(0, 1fr); }
+.vid { position: relative; width: min(100%, var(--vidw, 100%)); aspect-ratio: 16 / 9; margin: 0 auto; background: #000; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+.vid[hidden] { display: none; }
+.vid video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.vbar { position: absolute; left: 8px; right: 8px; bottom: 8px; display: flex; gap: 8px; align-items: center; pointer-events: none; }
+.vbar > * { pointer-events: auto; }
+.vbar .cap { font-size: 12px; background: rgba(0, 0, 0, .72); padding: 2px 8px; border-radius: 3px; color: #ddd; }
+.vbar .cap a { color: #9cc7ff; text-decoration: none; }
+.vbar button { margin-left: auto; border: 1px solid rgba(255, 255, 255, .25); background: rgba(0, 0, 0, .72); color: #fff; border-radius: 999px; padding: 2px 12px; font-size: 12px; cursor: pointer; }
+.text { overflow-y: auto; padding: 12px 2px 16px; }
+.stepno { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+.stepno .big { font-size: 46px; font-weight: 200; color: var(--link); line-height: 1; font-variant-numeric: tabular-nums; }
+.sname { font-size: 18px; color: var(--head); font-weight: 500; }
+.sname span { font-size: 11.5px; border: 1px solid var(--line); border-radius: 999px; padding: 1px 8px; color: var(--muted); margin-left: 8px; vertical-align: 2px; font-weight: 400; }
+.label { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.text p { margin: 0 0 8px; font-size: 15.5px; }
+.text ul { margin: 0 0 8px; padding-left: 20px; }
+.note { color: var(--muted); font-size: 14px !important; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 10px; }
+.st { position: relative; display: inline-flex; align-items: center; gap: 6px; background: var(--panel); border: 1px solid var(--line); border-radius: 4px; padding: 2px 9px 2px 3px; font-size: 13px; cursor: help; }
+.st i { width: 20px; height: 20px; border-radius: 4px; display: grid; place-items: center; font-style: normal; font-weight: 800; font-size: 11px; color: #fff; }
+.st i.Stun { background: #c78a1b; } .st i.Knockback { background: #2e5fae; } .st i.Confuse { background: #7a3bb5; }
+.st .tip { display: none; position: absolute; left: 0; bottom: calc(100% + 6px); width: 260px; background: #111; border: 1px solid var(--line); border-radius: 4px; padding: 8px 10px; z-index: 5; font-size: 13px; }
+.st:hover .tip, .st:focus .tip { display: block; }
+.box { background: var(--cell); border: 1px solid var(--line); border-radius: 4px; padding: 10px 12px; font-size: 13.5px; }
+.box .h { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
+.box .h b { color: var(--head); }
+.lang { border: 1px solid var(--line); background: var(--panel); border-radius: 3px; font-size: 11.5px; padding: 0 7px; cursor: pointer; }
+.box .warn { color: var(--warn); margin-top: 6px; }
+.box .map { color: var(--muted); font-size: 12.5px; margin-top: 8px; border-left: 2px solid var(--line); padding-left: 8px; }
+
+@media (max-width: 1100px) {
+  .app { height: auto; overflow: visible; }
+  .top { white-space: normal; }
+  .loadout { flex-basis: 100%; }
+  .legend { display: none; }
+  .body { flex-direction: column; }
+  .stage { padding: 12px; }
+  .frame { width: min(calc(100vw - 24px), 640px); height: min(calc(100vw - 24px), 640px); margin: 0 auto; }
+  .side { border-left: 0; border-top: 1px solid var(--line); padding: 12px; }
+  .keys { display: none; }
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="top" id="top"></header>
+  <section class="fight" aria-label="Fight timeline">
+    <div class="tabs" id="tabs"></div>
+    <div class="tlwrap"><div class="tl" id="tl"></div></div>
+  </section>
+  <div class="body">
+    <section class="stage">
+      <div class="frame">
+        <img id="diagram" alt="">
+        <div class="vswitch" id="vswitch" hidden></div>
+        <button class="nav-btn prev" id="prev" aria-label="Previous step">‹</button>
+        <button class="nav-btn next" id="next" aria-label="Next step">›</button>
+      </div>
+      <div class="controls">
+        <div class="dots" id="dots"></div>
+        <button class="play" id="play" aria-pressed="false">▶ Auto</button>
+        <span class="keys"><kbd>←</kbd><kbd>→</kbd> step · <kbd>↑</kbd><kbd>↓</kbd> mechanic · <kbd>space</kbd> auto</span>
+      </div>
+    </section>
+    <aside class="side">
+      <div class="vid" id="vidBox">
+        <video id="vid" muted loop playsinline autoplay preload="auto"></video>
+        <div class="vbar"><span class="cap">in-game · 阿萬 · <a id="yt" target="_blank" rel="noopener"></a></span><button id="snd">🔇 Sound off</button></div>
+      </div>
+      <div class="text" id="text"></div>
+    </aside>
+  </div>
+</div>
+<script src="guide.js"></script>
+<script>
+(() => {
+  const G = window.GUIDE, L = G.loadout, R = L.rotation;
+  const keyColor = { position: "#959396", "abyss-gaze": "#e5534b", "shadow-might": "#e3b341", "abyssal-surge": "#39c5cf", "blue-beams": "#58a6ff", "phantom-portals": "#a371f7", "phantom-spring": "#2ea043" };
+  const big = new Set(["blue-beams", "phantom-portals"]);
+
+  const steps = [];
+  G.sections.forEach((s, si) => s.steps.forEach((st, k) => steps.push({ ...st, si, k, n: steps.length + 1 })));
+  const state = { step: 0, variant: 0, lang: "en", auto: null };
+  const stepOf = (key, k) => steps.findIndex(x => G.sections[x.si].key === key && x.k === k);
+
+  const elColor = { Ghost: "#c3b1f0", Undead: "#6b3fa0", Water: "#3f86e0", Earth: "#8b5a2b", Fire: "#d8443a", Wind: "#3fa45a" };
+  const weeks = R.order.length;
+  const thisWeek = (Math.floor((Date.now() / 1000 - R.start) / R.period) % weeks + weeks) % weeks;
+  const elIcon = el => L.elementIcons[el] ? `<img src="${L.elementIcons[el]}" alt="">` : `<i></i>`;
+  const tip = s => s ? `<span class="tip">${s}</span>` : "";
+  const card = c => {
+    const body = `${c.icon ? `<img src="${c.icon}" alt="">` : ""}${c.name.replace(/ Card$/, "")}${tip(`<b>${c.name}</b><br>${[c.slot, c.effect].filter(Boolean).join(" · ")}`)}`;
+    return c.url ? `<a class="card" href="${c.url}" target="_blank" rel="noopener">${body}</a>` : `<span class="card" tabindex="0">${body}</span>`;
+  };
+  document.getElementById("top").innerHTML = `<h1>${G.boss.dungeon}</h1><div class="loadout" id="loadout"></div>`;
+  const renderLoadout = week => {
+    const el = R.order[week], e = L.elements[el];
+    document.getElementById("loadout").innerHTML = `
+      <div class="els" title="${L.note}">${R.order.map((x, i) => `<button class="el${i === week ? " on" : ""}" data-w="${i}" aria-pressed="${i === week}" style="--c:${elColor[x]}">${elIcon(x)}${x}${i === thisWeek ? "<small>this week</small>" : ""}</button>`).join("")}</div>
+      <span class="card use" tabindex="0">Use <b>${e.use}</b> ${e.mult}${e.item ? ` · ${e.item}` : ""}${tip(e.how)}</span>
+      <div class="cards"><span class="lbl">vs ${el}</span>${e.cards.map(card).join("")}<span class="lbl">every week</span>${L.always.map(card).join("")}${L.defense.length ? `<span class="card def" tabindex="0">Ghost defense<span class="tip">Boss skills always hit as Ghost.<br>${L.defense.map(c => `<b>${c.name}</b> · ${c.slot} · ${c.effect}`).join("<br>")}</span></span>` : ""}</div>`;
+  };
+  renderLoadout(thisWeek);
+
+  const tabs = document.getElementById("tabs");
+  tabs.innerHTML = G.sections.map((s, i) => `<button class="tab" data-i="${i}" style="--c:${keyColor[s.key]}"><b>${i + 1}</b>${s.name}</button>`).join("") +
+    `<span class="legend"><i></i>Shadow Might every 10%<u></u>Enrage below 20%</span>`;
+  const tabEls = [...tabs.querySelectorAll(".tab")];
+
+  // Timeline: 10% grid (each line is a Shadow Might), enrage zone, and one chip per other event, stacked in lanes.
+  const tl = document.getElementById("tl");
+  const sm = G.timeline.filter(e => e[1] === "shadow-might");
+  const evs = G.timeline.filter(e => e[1] !== "shadow-might");
+  tl.innerHTML = `<div class="enrage"></div>` +
+    [100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 0].map(h => `<div class="grid${h % 100 ? " sm" : ""}" style="left:${100 - h}%"></div>`).join("") +
+    `<div class="axis"></div>` +
+    [100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 0].map(h => `<span class="pct${h % 100 ? " sm" : ""}" style="left:${100 - h}%${h === 0 ? ";transform:translateX(-100%)" : h === 100 ? ";transform:none" : ""}">${h}%</span>`).join("") +
+    sm.map(([hp, k, label, ref], j) => `<button class="sm-mark" data-sm="${j}" style="left:${100 - hp}%" title="${hp}% · ${label}" aria-label="${label} at ${hp}%"></button>`).join("") +
+    evs.map(([hp, k, label], j) => `<div class="stem" data-e="${j}" style="--c:${keyColor[k]}"></div><div class="evdot" data-e="${j}" style="left:${100 - hp}%;--c:${keyColor[k]}"></div>` +
+      `<button class="chip${big.has(k) ? " big" : ""}" data-e="${j}" style="--c:${keyColor[k]}">${label}<b>${hp}%</b></button>`).join("");
+  const chipEls = [...tl.querySelectorAll(".chip")], stemEls = [...tl.querySelectorAll(".stem")], dotEls = [...tl.querySelectorAll(".evdot")];
+  const smEls = [...tl.querySelectorAll(".sm-mark")];
+
+  const LANE_H = 22, LANES = 4, AXIS = 94;
+  const layoutLanes = () => {
+    const W = tl.clientWidth, right = Array(LANES).fill(-Infinity);
+    evs.map((e, j) => [W * (100 - e[0]) / 100, j]).sort((a, b) => a[0] - b[0]).forEach(([px, j]) => {
+      const chip = chipEls[j], w = chip.offsetWidth;
+      // A chip may slide sideways as long as its stem (at the exact HP) still lands inside it.
+      const lo = Math.max(0, px - w + 8), hi = Math.min(W - w, Math.max(0, px - 8));
+      let lane = -1, left = 0;
+      for (let k = 0; k < LANES && lane < 0; k++) {
+        const x = Math.max(lo, right[k] + 5);
+        if (x <= hi) { lane = k; left = x; }
+      }
+      if (lane < 0) { lane = right.indexOf(Math.min(...right)); left = Math.min(hi, Math.max(lo, right[lane] + 5)); }
+      right[lane] = left + w;
+      const top = (LANES - 1 - lane) * LANE_H;
+      chip.style.left = `${left}px`; chip.style.top = `${top}px`;
+      Object.assign(stemEls[j].style, { left: `${px}px`, top: `${top + 21}px`, height: `${AXIS - top - 21}px` });
+    });
+  };
+
+  // CSS can't size a square from the height left in a flex row, so measure it.
+  const fit = () => {
+    const root = document.documentElement.style;
+    if (innerWidth <= 1100) { root.removeProperty("--diag"); root.removeProperty("--vidw"); return; }
+    const top = document.querySelector(".body").getBoundingClientRect().top;
+    const d = Math.max(300, Math.min(innerHeight - top - 12 - 10 - 28 - 10, innerWidth - 600));
+    root.setProperty("--diag", `${Math.floor(d)}px`);
+    root.setProperty("--vidw", `${Math.floor((innerHeight - top) * .6 * 16 / 9)}px`);
+  };
+
+  const vid = document.getElementById("vid"), vidBox = document.getElementById("vidBox"), yt = document.getElementById("yt"), snd = document.getElementById("snd");
+  let clipSrc = null;
+  const setClip = clip => {
+    vidBox.hidden = !clip;
+    if (!clip) { vid.pause(); clipSrc = null; return; }
+    if (clipSrc !== clip.src) { clipSrc = clip.src; vid.src = clip.src; vid.poster = clip.poster; vid.play().catch(() => {}); }
+    yt.href = clip.url; yt.textContent = `YouTube ${clip.at} ↗`;
+  };
+  snd.onclick = () => { vid.muted = !vid.muted; snd.textContent = vid.muted ? "🔇 Sound off" : "🔊 Sound on"; if (!vid.muted) vid.play().catch(() => {}); };
+
+  const img = document.getElementById("diagram"), vsw = document.getElementById("vswitch");
+  const matches = (ref, st, key, sec) => key === sec.key && ref[0] === st.k && (ref[1] === undefined || !st.variants || ref[1] === state.variant);
+  const render = () => {
+    const st = steps[state.step], s = G.sections[st.si];
+    const own = steps.filter(x => x.si === st.si);
+    tabEls.forEach((t, i) => t.classList.toggle("on", i === st.si));
+    evs.forEach(([hp, k, label, ref], j) => {
+      const on = k === s.key, here = matches(ref, st, k, s);
+      chipEls[j].classList.toggle("on", on); chipEls[j].classList.toggle("here", here);
+      stemEls[j].classList.toggle("on", on); dotEls[j].classList.toggle("on", on);
+    });
+    sm.forEach(([hp, k, label, ref], j) => { smEls[j].classList.toggle("on", s.key === k); smEls[j].classList.toggle("here", matches(ref, st, k, s)); });
+
+    const v = st.variants ? st.variants[Math.min(state.variant, st.variants.length - 1)] : null;
+    img.src = v ? v.img : st.img; img.alt = v ? v.label : `Step ${st.n}`;
+    vsw.hidden = !v;
+    vsw.innerHTML = v ? st.variants.map((x, k) => `<button class="${x === v ? "on" : ""}" data-v="${k}">${x.label}</button>`).join("") : "";
+    document.getElementById("dots").innerHTML = own.map(x => `<button class="dot ${x === st ? "on" : ""}" data-s="${x.n - 1}">${x.n}</button>`).join("");
+    document.getElementById("prev").disabled = state.step === 0;
+    document.getElementById("next").disabled = state.step === steps.length - 1;
+    setClip((v && v.clip) || st.clip || s.clip);
+
+    const official = s.skill ? (state.lang === "en" ? s.skill.en : s.skill.th) : s.unofficial;
+    document.getElementById("text").innerHTML = `
+      <div class="stepno"><span class="big">${st.n}</span><div><div class="sname">${s.name}${s.tags.map(t => `<span>${t}</span>`).join("")}</div><div class="label">step ${own.indexOf(st) + 1} of ${own.length}</div></div></div>
+      ${st.text.map(t => `<p>${t}</p>`).join("")}
+      ${v ? `<ul>${v.bullets.map(b => `<li>${b}</li>`).join("")}</ul>` : ""}
+      ${st.note ? `<p class="note">(${st.note})</p>` : ""}
+      ${s.statuses ? `<div class="chips">${s.statuses.map(x => `<span class="st" tabindex="0"><i class="${x.name}">${x.name[0]}</i>${x.name}<span class="tip"><b>${x.name}</b><br>${x.desc}<br><span style="color:var(--muted)">${x.bullets.join(" ")}</span></span></span>`).join("")}</div>` : ""}
+      ${official ? `<div class="box"><div class="h"><b>${s.skill ? "In-game text" : "Not in the skill list"}</b>${s.skill ? `<button class="lang" data-lang>${state.lang === "en" ? "ไทย" : "EN"}</button>` : ""}</div>
+        <div class="${s.skill && state.lang === "th" ? "th" : ""}" lang="${s.skill ? state.lang : "en"}"><em>${official}</em></div>
+        ${s.warning ? `<div class="warn">Cast warning: <em>${s.warning}</em></div>` : ""}${s.mapNote ? `<div class="map">${s.mapNote}</div>` : ""}</div>` : ""}`;
+  };
+
+  const go = (i, variant = 0) => { state.step = Math.max(0, Math.min(steps.length - 1, i)); state.variant = variant; render(); };
+  const jump = ([hp, key, label, ref]) => go(stepOf(key, ref[0]), ref[1] || 0);
+  const mech = d => { const t = steps.findIndex(x => x.si === steps[state.step].si + d); if (t >= 0) go(t); };
+  const setAuto = on => {
+    clearInterval(state.auto); state.auto = null;
+    const btn = document.getElementById("play"); btn.setAttribute("aria-pressed", on); btn.textContent = on ? "❚❚ Auto" : "▶ Auto";
+    if (on) state.auto = setInterval(() => {
+      const st = steps[state.step];
+      if (st.variants && state.variant < st.variants.length - 1) { state.variant++; render(); return; }
+      const nx = steps[state.step + 1];
+      go(nx && nx.si === st.si ? state.step + 1 : steps.findIndex(x => x.si === st.si));
+    }, 2600);
+  };
+
+  document.getElementById("prev").onclick = () => go(state.step - 1);
+  document.getElementById("next").onclick = () => go(state.step + 1);
+  document.getElementById("play").onclick = () => setAuto(!state.auto);
+  document.addEventListener("click", e => {
+    const t = e.target.closest("[data-i],[data-s],[data-v],[data-lang],[data-e],[data-sm],[data-w]"); if (!t) return;
+    if (t.dataset.w) { renderLoadout(+t.dataset.w); fit(); }
+    else if (t.dataset.i) go(steps.findIndex(x => x.si === +t.dataset.i));
+    else if (t.dataset.e) jump(evs[+t.dataset.e]);
+    else if (t.dataset.sm) jump(sm[+t.dataset.sm]);
+    else if (t.dataset.s) go(+t.dataset.s);
+    else if (t.dataset.v) { state.variant = +t.dataset.v; render(); }
+    else if ("lang" in t.dataset) { state.lang = state.lang === "en" ? "th" : "en"; render(); }
+  });
+  addEventListener("keydown", e => {
+    if (e.key === "ArrowRight") go(state.step + 1);
+    else if (e.key === "ArrowLeft") go(state.step - 1);
+    else if (e.key === "ArrowDown") { e.preventDefault(); mech(1); }
+    else if (e.key === "ArrowUp") { e.preventDefault(); mech(-1); }
+    else if (e.key === " ") { e.preventDefault(); setAuto(!state.auto); }
+    else if (/^[1-9]$/.test(e.key)) { const t = steps.findIndex(x => x.si === +e.key - 1); if (t >= 0) go(t); }
+  });
+  addEventListener("resize", () => { fit(); layoutLanes(); });
+  fit(); layoutLanes(); render();
+  document.fonts && document.fonts.ready.then(() => { fit(); layoutLanes(); });
+})();
+</script>
+</body>
+</html>

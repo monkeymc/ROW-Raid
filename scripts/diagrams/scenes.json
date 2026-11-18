@@ -1,0 +1,2267 @@
+[
+ {
+  "id": "position_01",
+  "objects": [
+   {
+    "t": "circle",
+    "x": 0,
+    "y": 12,
+    "r": 33,
+    "fill": "safe",
+    "dash": true
+   },
+   {
+    "t": "marker",
+    "asset": "game/ffxiv/enemy/large.png",
+    "x": 0,
+    "y": 0,
+    "size": 18
+   },
+   {
+    "t": "player",
+    "role": "T",
+    "x": 0,
+    "y": 14
+   },
+   {
+    "t": "player",
+    "role": "D1",
+    "x": -13,
+    "y": 14
+   },
+   {
+    "t": "player",
+    "role": "D2",
+    "x": 13,
+    "y": 14
+   },
+   {
+    "t": "player",
+    "role": "H",
+    "x": -7,
+    "y": 32
+   },
+   {
+    "t": "player",
+    "role": "D3",
+    "x": 7,
+    "y": 32
+   },
+   {
+    "t": "text",
+    "x": 0,
+    "y": 53,
+    "text": "STACK AT HIS FEET",
+    "size": 6,
+    "color": "safeEdge"
+   }
+  ]
+ },
+ {
+  "id": "abyss-gaze_01a",
+  "objects": [
+   {
+    "t": "circle",
+    "x": 34,
+    "y": 0,
+    "r": 60,
+    "fill": "blue"
+   },
+   {
+    "t": "circle",
+    "x": -34,
+    "y": 0,
+    "r": 60,
+    "fill": "danger"
+   },
+   {
+    "t": "marker",
+    "asset": "game/ffxiv/enemy/large.png",
+    "x": 0,
+    "y": 0,
+    "size": 18
+   },
+   {
+    "t": "player",
+    "role": "T",
+    "x": 0,
+    "y": 14
+   },
+   {
+    "t": "player",
+    "role": "D1",
+    "x": -13,
+    "y": 14
+   },
+   {
+    "t": "player",
+    "role": "D2",
+    "x": 13,
+    "y": 14
+   },
+   {
+    "t": "player",
+    "role": "H",
+    "x": -7,
+    "y": 32
+   },
+   {
+    "t": "player",
+    "role": "D3",
+    "x": 7,
+    "y": 32
+   },
+   {
+    "t": "arrow",
+    "from": [
+     14,
+     20
+    ],
+    "to": [
+     36,
+     20
+    ],
+    "w": 4,
+    "color": "arrow",
+    "dash": false
+   },
+   {
+    "t": "text",
+    "x": -52,
+    "y": -66,
+    "text": "RED = STUN",
+    "size": 6,
+    "color": "dangerEdge"
+   }
+  ]
+ },
+ {
+  "id": "abyss-gaze_01b",
+  "objects": [
+   {
+    "t": "rect",
+    "x": 0,
+    "y": 38,
+    "w": 180,
+    "h": 44,
+    "fill": "blue"
+   },
+   {
+    "t": "rect",
+    "x": 0,
+    "y": -10,
+    "w": 150,
+    "h": 90,
+    "fill": "danger"
+   },
+   {
+    "t": "marker",
+    "asset": "game/ffxiv/enemy/large.png",
+    "x": 0,
+    "y": 0,
+    "size": 18
+   },
+   {
+    "t": "player",
+    "role": "T",
+    "x": 0,
+    "y": 14
+   },
+   {
+    "t": "player",
+    "role": "D1",
+    "x": -13,
+    "y": 14
+   },
+   {
+    "t": "player",
+    "role": "D2",
+    "x": 13,
+    "y": 14
+   },
+   {
+    "t": "player",
+    "role": "H",
+    "x": -7,
+    "y": 32
+   },
+   {
+    "t": "player",
+    "role": "D3",
+    "x": 7,
+    "y": 32
+   },
+   {
+    "t": "text",
+    "x": 0,
+    "y": -64,
+    "text": "LOW DAMAGE, SHORT STUN",
+    "size": 5.5,
+    "color": "dangerEdge"
+   }
+  ]
+ },
+ {
+  "id": "abyss-gaze_02",
+  "objects": [
+   {
+    "t": "donut",
+    "x": 0,
+    "y": 0,
+    "r": 66,
+    "inner": 60,
+    "fill": "danger"
+   },
+   {
+    "t": "donut",
+    "x": 0,
+    "y": 0,
+    "r": 30,
+    "inner": 26,
+    "fill": "danger"
+   },
+   {
+    "t": "arrow",
+    "from": [
+     0,
+     -68
+    ],
+    "to": [
+     0,
+     -92
+    ],
+    "w": 4,
+    "color": "dangerEdge",
+    "dash": false
+   },
+   {
+    "t": "arrow",
+    "from": [
+     47,
+     47
+    ],
+    "to": [
+     64,
+     64
+    ],
+    "w": 4,
+    "color": "dangerEdge",
+    "dash": false
+   },
+   {
+    "t": "arrow",
+    "from": [
+     -47,
+     47
+    ],
+    "to": [
+     -64,
+     64
+    ],
+    "w": 4,
+    "color": "dangerEdge",
+    "dash": false
+   },
+   {
+    "t": "marker",
+    "asset": "game/ffxiv/enemy/large.png",
+    "x": 0,
+    "y": 0,
+    "size": 18
+   },
+   {
+    "t": "player",
+    "role": "T",
+    "x": 0,
+    "y": 12
+   },
+   {
+    "t": "player",
+    "role": "D1",
+    "x": -11,
+    "y": 7
+   },
+   {
+    "t": "player",
+    "role": "D2",
+    "x": 11,
+    "y": 7
+   },
+   {
+    "t": "player",
+    "role": "H",
+    "x": -6,
+    "y": 19
+   },
+   {
+    "t": "player",
+    "role": "D3",
+    "x": 6,
+    "y": 19
+   },
+   {
+    "t": "text",
+    "x": 0,
+    "y": -52,
+    "text": "RINGS EXPAND OUTWARD",
+    "size": 5.5,
+    "color": "dangerEdge"
+   }
+  ]
+ },
+ {
+  "id": "shadow-might_01",
+  "objects": [
+   {
+    "t": "circle",
+    "x": 0,
+    "y": 0,
+    "r": 99,
+    "fill": "gold",
+    "sw": 2
+   },
+   {
+    "t": "donut",
+    "x": 0,
+    "y": 0,
+    "r": 99,
+    "inner": 88,
+    "fill": "goldRim"
+   },
+   {
+    "t": "arrow",
+    "from": [
+     0.0,
+     -30.0
+    ],
+    "to": [
+     0.0,
+     -78.0
+    ],
+    "w": 4,
+    "color": "goldEdge",
+    "dash": false
+   },
+   {
+    "t": "arrow",
+    "from": [
+     30.0,
+     0.0
+    ],
+    "to": [
+     78.0,
+     0.0
+    ],
+    "w": 4,
+    "color": "goldEdge",
+    "dash": false
+   },
+   {
+    "t": "arrow",
+    "from": [
+     0.0,
+     30.0
+    ],
+    "to": [
+     0.0,
+     78.0
+    ],
+    "w": 4,
+    "color": "goldEdge",
+    "dash": false
+   },
+   {
+    "t": "arrow",
+    "from": [
+     -30.0,
+     0.0
+    ],
+    "to": [
+     -78.0,
+     0.0
+    ],
+    "w": 4,
+    "color": "goldEdge",
+    "dash": false
+   },
+   {
+    "t": "marker",
+    "asset": "game/ffxiv/enemy/large.png",
+    "x": 0,
+    "y": 0,
+    "size": 18
+   },
+   {
+    "t": "player",
+    "role": "T",
+    "x": 0,
+    "y": 14
+   },
+   {
+    "t": "player",
+    "role": "D1",
+    "x": -13,
+    "y": 14
+   },
+   {
+    "t": "player",
+    "role": "D2",
+    "x": 13,
+    "y": 14
+   },
+   {
+    "t": "player",
+    "role": "H",
+    "x": -7,
+    "y": 32
+   },
+   {
+    "t": "player",
+    "role": "D3",
+    "x": 7,
+    "y": 32
+   },
+   {
+    "t": "text",
+    "x": 0,
+    "y": -42,
+    "text": "EVERY 10% HP",
+    "size": 7,
+    "color": "goldEdge"
+   },
+   {
+    "t": "text",
+    "x": 0,
+    "y": 62,
+    "text": "WHOLE ARENA, NO DODGE",
+    "size": 5.5,
+    "color": "label"
+   }
+  ]
+ },
+ {
+  "id": "shadow-might_02",
+  "objects": [
+   {
+    "t": "donut",
+    "x": 0,
+    "y": 0,
+    "r": 20,
+    "inner": 11,
+    "fill": "danger"
+   },
+   {
+    "t": "marker",
+    "asset": "game/ffxiv/enemy/large.png",
+    "x": 0,
+    "y": 0,
+    "size": 18
+   },
+   {
+    "t": "player",
+    "role": "T",
+    "x": 0,
+    "y": 30
+   },
+   {
+    "t": "player",
+    "role": "D1",
+    "x": -14,
+    "y": 32
+   },
+   {
+    "t": "player",
+    "role": "D2",
+    "x": 14,
+    "y": 32
+   },
+   {
+    "t": "player",
+    "role": "H",
+    "x": -7,
+    "y": 43
+   },
+   {
+    "t": "player",
+    "role": "D3",
+    "x": 7,
+    "y": 43
+   },
+   {
+    "t": "text",
+    "x": 0,
+    "y": -36,
+    "text": "BELOW 20%",
+    "size": 8,
+    "color": "dangerEdge"
+   },
+   {
+    "t": "text",
+    "x": 0,
+    "y": -26,
+    "text": "DMG ▲  DMG REDUCTION ▲",
+    "size": 5,
+    "color": "label"
+   },
+   {
+    "t": "text",
+    "x": 0,
+    "y": 66,
+    "text": "≈10 s per 1% HP",
+    "size": 6,
+    "color": "label"
+   }
+  ]
+ },
+ {
+  "id": "abyssal-surge_01",
+  "objects": [
+   {
+    "t": "rect",
+    "x": -40,
+    "y": -40,
+    "w": 26,
+    "h": 158.9,
+    "angle": 45,
+    "fill": "danger"
+   },
+   {
+    "t": "rect",
+    "x": 0,
+    "y": 0,
+    "w": 26,
+    "h": 194.0,
+    "angle": 45,
+    "fill": "danger"
+   },
+   {
+    "t": "rect",
+    "x": 40,
+    "y": 40,
+    "w": 26,
+    "h": 158.9,
+    "angle": 45,
+    "fill": "danger"
+   },
+   {
+    "t": "rect",
+    "x": 62.9,
+    "y": -62.9,
+    "w": 26,
+    "h": 10,
+    "angle": 45,
+    "fill": "water"
+   },
+   {
+    "t": "rect",
+    "x": 90.5,
+    "y": -10.5,
+    "w": 26,
+    "h": 10,
+    "angle": 45,
+    "fill": "water"
+   },
+   {
+    "t": "arrow",
+    "from": [
+     55.9,
+     -55.9
+    ],
+    "to": [
+     36.1,
+     -36.1
+    ],
+    "w": 4,
+    "color": "waterEdge",
+    "dash": false
+   },
+   {
+    "t": "arrow",
+    "from": [
+     83.5,
+     -3.5
+    ],
+    "to": [
+     63.7,
+     16.3
+    ],
+    "w": 4,
+    "color": "waterEdge",
+    "dash": false
+   },
+   {
+    "t": "marker",
+    "asset": "game/ffxiv/enemy/large.png",
+    "x": 0,
+    "y": 0,
+    "size": 18
+   },
+   {
+    "t": "player",
+    "role": "T",
+    "x": 0,
+    "y": 14
+   },
+   {
+    "t": "player",
+    "role": "D1",
+    "x": -13,
+    "y": 14
+   },
+   {
+    "t": "player",
+    "role": "D2",
+    "x": 13,
+    "y": 14
+   },
+   {
+    "t": "player",
+    "role": "H",
+    "x": -7,
+    "y": 32
+   },
+   {
+    "t": "player",
+    "role": "D3",
+    "x": 7,
+    "y": 32
+   },
+   {
+    "t": "text",
+    "x": -46,
+    "y": -72,
+    "text": "LANES, THEN WAVE",
+    "size": 5.5,
+    "color": "dangerEdge"
+   }
+  ]
+ },
+ {
+  "id": "abyssal-surge_02",
+  "objects": [
+   {
+    "t": "rect",
+    "x": 0,
+    "y": 0,
+    "w": 26,
+    "h": 194.0,
+    "angle": 45,
+    "fill": "danger"
+   },
+   {
+    "t": "marker",
+    "asset": "game/ffxiv/enemy/large.png",
+    "x": 0,
+    "y": 0,
+    "size": 18
+   },
+   {
+    "t": "player",
+    "role": "T",
+    "x": 0,
+    "y": 14
+   },
+   {
+    "t": "player",
+    "role": "D2",
+    "x": 13,
+    "y": 14
+   },
+   {
+    "t": "player",
+    "role": "H",
+    "x": -7,
+    "y": 32
+   },
+   {
+    "t": "player",
+    "role": "D3",
+    "x": 7,
+    "y": 32
+   },
+   {
+    "t": "player",
+    "role": "D1",
+    "x": -44,
+    "y": 46
+   },
+   {
+    "t": "arrow",
+    "from": [
+     -12,
+     17
+    ],
+    "to": [
+     -40,
+     42
+    ],
+    "w": 4,
+    "color": "waterEdge",
+    "dash": true
+   },
+   {
+    "t": "arrow",
+    "from": [
+     -38,
+     36
+    ],
+    "to": [
+     -16,
+     18
+    ],
+    "w": 4,
+    "color": "safeEdge",
+    "dash": false
+   },
+   {
+    "t": "text",
+    "x": -56,
+    "y": 62,
+    "text": "PUSHED",
+    "size": 5.5,
+    "color": "waterEdge"
+   },
+   {
+    "t": "text",
+    "x": -4,
+    "y": 52,
+    "text": "WALK BACK",
+    "size": 5.5,
+    "color": "safeEdge"
+   }
+  ]
+ },
+ {
+  "id": "abyssal-surge_03",
+  "objects": [
+   {
+    "t": "circle",
+    "x": -62,
+    "y": -62,
+    "r": 20,
+    "fill": "water"
+   },
+   {
+    "t": "circle",
+    "x": 62,
+    "y": -62,
+    "r": 20,
+    "fill": "water"
+   },
+   {
+    "t": "circle",
+    "x": -62,
+    "y": 62,
+    "r": 20,
+    "fill": "water"
+   },
+   {
+    "t": "circle",
+    "x": 62,
+    "y": 62,
+    "r": 20,
+    "fill": "water"
+   },
+   {
+    "t": "arrow",
+    "from": [
+     -38.44,
+     -38.44
+    ],
+    "to": [
+     -22.32,
+     -22.32
+    ],
+    "w": 4,
+    "color": "waterEdge",
+    "dash": false
+   },
+   {
+    "t": "arrow",
+    "from": [
+     38.44,
+     -38.44
+    ],
+    "to": [
+     22.32,
+     -22.32
+    ],
+    "w": 4,
+    "color": "waterEdge",
+    "dash": false
+   },
+   {
+    "t": "arrow",
+    "from": [
+     -38.44,
+     38.44
+    ],
+    "to": [
+     -22.32,
+     22.32
+    ],
+    "w": 4,
+    "color": "waterEdge",
+    "dash": false
+   },
+   {
+    "t": "arrow",
+    "from": [
+     38.44,
+     38.44
+    ],
+    "to": [
+     22.32,
+     22.32
+    ],
+    "w": 4,
+    "color": "waterEdge",
+    "dash": false
+   },
+   {
+    "t": "circle",
+    "x": 0,
+    "y": -36,
+    "r": 9,
+    "fill": "safe",
+    "dash": true
+   },
+   {
+    "t": "circle",
+    "x": 36,
+    "y": 0,
+    "r": 9,
+    "fill": "safe",
+    "dash": true
+   },
+   {
+    "t": "circle",
+    "x": 0,
+    "y": 36,
+    "r": 9,
+    "fill": "safe",
+    "dash": true
+   },
+   {
+    "t": "circle",
+    "x": -36,
+    "y": 0,
+    "r": 9,
+    "fill": "safe",
+    "dash": true
+   },
+   {
+    "t": "marker",
+    "asset": "game/ffxiv/enemy/large.png",
+    "x": 0,
+    "y": 0,
+    "size": 18
+   },
+   {
+    "t": "player",
+    "role": "T",
+    "x": 0,
+    "y": -36
+   },
+   {
+    "t": "player",
+    "role": "D1",
+    "x": -36,
+    "y": 0
+   },
+   {
+    "t": "player",
+    "role": "D2",
+    "x": 36,
+    "y": 0
+   },
+   {
+    "t": "player",
+    "role": "H",
+    "x": -8,
+    "y": 36
+   },
+   {
+    "t": "player",
+    "role": "D3",
+    "x": 8,
+    "y": 36
+   },
+   {
+    "t": "text",
+    "x": 0,
+    "y": -86,
+    "text": "STEP N / S / E / W",
+    "size": 5.5,
+    "color": "safeEdge"
+   }
+  ]
+ },
+ {
+  "id": "blue-beams_01",
+  "objects": [
+   {
+    "t": "line",
+    "from": [
+     2.59,
+     -9.66
+    ],
+    "to": [
+     25.88,
+     -96.59
+    ],
+    "w": 3.5,
+    "color": "beam"
+   },
+   {
+    "t": "line",
+    "from": [
+     7.07,
+     -7.07
+    ],
+    "to": [
+     70.71,
+     -70.71
+    ],
+    "w": 3.5,
+    "color": "beam"
+   },
+   {
+    "t": "line",
+    "from": [
+     9.66,
+     -2.59
+    ],
+    "to": [
+     96.59,
+     -25.88
+    ],
+    "w": 3.5,
+    "color": "beam"
+   },
+   {
+    "t": "line",
+    "from": [
+     9.66,
+     2.59
+    ],
+    "to": [
+     96.59,
+     25.88
+    ],
+    "w": 3.5,
+    "color": "beam"
+   },
+   {
+    "t": "line",
+    "from": [
+     7.07,
+     7.07
+    ],
+    "to": [
+     70.71,
+     70.71
+    ],
+    "w": 3.5,
+    "color": "beam"
+   },
+   {
+    "t": "line",
+    "from": [
+     2.59,
+     9.66
+    ],
+    "to": [
+     25.88,
+     96.59
+    ],
+    "w": 3.5,
+    "color": "beam"
+   },
+   {
+    "t": "line",
+    "from": [
+     -2.59,
+     9.66
+    ],
+    "to": [
+     -25.88,
+     96.59
+    ],
+    "w": 3.5,
+    "color": "beam"
+   },
+   {
+    "t": "line",
+    "from": [
+     -7.07,
+     7.07
+    ],
+    "to": [
+     -70.71,
+     70.71
+    ],
+    "w": 3.5,
+    "color": "beam"
+   },
+   {
+    "t": "line",
+    "from": [
+     -9.66,
+     2.59
+    ],
+    "to": [
+     -96.59,
+     25.88
+    ],
+    "w": 3.5,
+    "color": "beam"
+   },
+   {
+    "t": "line",
+    "from": [
+     -9.66,
+     -2.59
+    ],
+    "to": [
+     -96.59,
+     -25.88
+    ],
+    "w": 3.5,
+    "color": "beam"
+   },
+   {
+    "t": "line",
+    "from": [
+     -7.07,
+     -7.07
+    ],
+    "to": [
+     -70.71,
+     -70.71
+    ],
+    "w": 3.5,
+    "color": "beam"
+   },
+   {
+    "t": "line",
+    "from": [
+     -2.59,
+     -9.66
+    ],
+    "to": [
+     -25.88,
+     -96.59
+    ],
+    "w": 3.5,
+    "color": "beam"
+   },
+   {
+    "t": "circle",
+    "x": 0.0,
+    "y": 52.0,
+    "r": 8,
+    "fill": "safe",
+    "dash": true
+   },
+   {
+    "t": "circle",
+    "x": -29.0,
+    "y": 50.23,
+    "r": 8,
+    "fill": "safe",
+    "dash": true
+   },
+   {
+    "t": "circle",
+    "x": 29.0,
+    "y": 50.23,
+    "r": 8,
+    "fill": "safe",
+    "dash": true
+   },
+   {
+    "t": "circle",
+    "x": 0.0,
+    "y": 76.0,
+    "r": 8,
+    "fill": "safe",
+    "dash": true
+   },
+   {
+    "t": "circle",
+    "x": 38.0,
+    "y": 65.82,
+    "r": 8,
+    "fill": "safe",
+    "dash": true
+   },
+   {
+    "t": "arrow",
+    "from": [
+     0,
+     14
+    ],
+    "to": [
+     0.0,
+     45.160000000000004
+    ],
+    "w": 3.5,
+    "color": "safeEdge",
+    "dash": false
+   },
+   {
+    "t": "arrow",
+    "from": [
+     -13,
+     14
+    ],
+    "to": [
+     -26.119999999999997,
+     43.7086
+    ],
+    "w": 3.5,
+    "color": "safeEdge",
+    "dash": false
+   },
+   {
+    "t": "arrow",
+    "from": [
+     13,
+     14
+    ],
+    "to": [
+     26.119999999999997,
+     43.7086
+    ],
+    "w": 3.5,
+    "color": "safeEdge",
+    "dash": false
+   },
+   {
+    "t": "marker",
+    "asset": "game/ffxiv/enemy/large.png",
+    "x": 0,
+    "y": 0,
+    "size": 18
+   },
+   {
+    "t": "player",
+    "role": "T",
+    "x": 0.0,
+    "y": 52.0
+   },
+   {
+    "t": "player",
+    "role": "D1",
+    "x": -29.0,
+    "y": 50.23
+   },
+   {
+    "t": "player",
+    "role": "D2",
+    "x": 29.0,
+    "y": 50.23
+   },
+   {
+    "t": "player",
+    "role": "H",
+    "x": 0.0,
+    "y": 76.0
+   },
+   {
+    "t": "player",
+    "role": "D3",
+    "x": 38.0,
+    "y": 65.82
+   },
+   {
+    "t": "text",
+    "x": -52,
+    "y": 84,
+    "text": "STEP INTO A GAP",
+    "size": 5.5,
+    "color": "safeEdge"
+   }
+  ]
+ },
+ {
+  "id": "blue-beams_02a",
+  "objects": [
+   {
+    "t": "line",
+    "from": [
+     0.0,
+     -10.0
+    ],
+    "to": [
+     0.0,
+     -100.0
+    ],
+    "w": 4.5,
+    "color": "beam"
+   },
+   {
+    "t": "line",
+    "from": [
+     7.07,
+     -7.07
+    ],
+    "to": [
+     70.71,
+     -70.71
+    ],
+    "w": 4.5,
+    "color": "beam"
+   },
+   {
+    "t": "line",
+    "from": [
+     10.0,
+     0.0
+    ],
+    "to": [
+     100.0,
+     0.0
+    ],
+    "w": 4.5,
+    "color": "beam"
+   },
+   {
+    "t": "line",
+    "from": [
+     7.07,
+     7.07
+    ],
+    "to": [
+     70.71,
+     70.71
+    ],
+    "w": 4.5,
+    "color": "beam"
+   },
+   {
+    "t": "line",
+    "from": [
+     0.0,
+     10.0
+    ],
+    "to": [
+     0.0,
+     100.0
+    ],
+    "w": 4.5,
+    "color": "beam"
+   },
+   {
+    "t": "line",
+    "from": [
+     -7.07,
+     7.07
+    ],
+    "to": [
+     -70.71,
+     70.71
+    ],
+    "w": 4.5,
+    "color": "beam"
+   },
+   {
+    "t": "line",
+    "from": [
+     -10.0,
+     0.0
+    ],
+    "to": [
+     -100.0,
+     0.0
+    ],
+    "w": 4.5,
+    "color": "beam"
+   },
+   {
+    "t": "line",
+    "from": [
+     -7.07,
+     -7.07
+    ],
+    "to": [
+     -70.71,
+     -70.71
+    ],
+    "w": 4.5,
+    "color": "beam"
+   },
+   {
+    "t": "text",
+    "x": 0.0,
+    "y": -90.0,
+    "text": "1",
+    "size": 6.5,
+    "color": "beam"
+   },
+   {
+    "t": "text",
+    "x": 63.64,
+    "y": -63.64,
+    "text": "2",
+    "size": 6.5,
+    "color": "beam"
+   },
+   {
+    "t": "text",
+    "x": 90.0,
+    "y": 0.0,
+    "text": "3",
+    "size": 6.5,
+    "color": "beam"
+   },
+   {
+    "t": "text",
+    "x": 63.64,
+    "y": 63.64,
+    "text": "4",
+    "size": 6.5,
+    "color": "beam"
+   },
+   {
+    "t": "text",
+    "x": 0.0,
+    "y": 90.0,
+    "text": "5",
+    "size": 6.5,
+    "color": "beam"
+   },
+   {
+    "t": "text",
+    "x": -63.64,
+    "y": 63.64,
+    "text": "6",
+    "size": 6.5,
+    "color": "beam"
+   },
+   {
+    "t": "text",
+    "x": -90.0,
+    "y": 0.0,
+    "text": "7",
+    "size": 6.5,
+    "color": "beam"
+   },
+   {
+    "t": "text",
+    "x": -63.64,
+    "y": -63.64,
+    "text": "8",
+    "size": 6.5,
+    "color": "beam"
+   },
+   {
+    "t": "marker",
+    "asset": "game/ffxiv/enemy/large.png",
+    "x": 0,
+    "y": 0,
+    "size": 18
+   },
+   {
+    "t": "line",
+    "from": [
+     17.0,
+     -29.44
+    ],
+    "to": [
+     29.44,
+     -17.0
+    ],
+    "w": 4,
+    "color": "safeEdge"
+   },
+   {
+    "t": "line",
+    "from": [
+     29.44,
+     -17.0
+    ],
+    "to": [
+     34.0,
+     0.0
+    ],
+    "w": 4,
+    "color": "safeEdge"
+   },
+   {
+    "t": "line",
+    "from": [
+     34.0,
+     0.0
+    ],
+    "to": [
+     29.44,
+     17.0
+    ],
+    "w": 4,
+    "color": "safeEdge"
+   },
+   {
+    "t": "line",
+    "from": [
+     29.44,
+     17.0
+    ],
+    "to": [
+     17.0,
+     29.44
+    ],
+    "w": 4,
+    "color": "safeEdge"
+   },
+   {
+    "t": "line",
+    "from": [
+     17.0,
+     29.44
+    ],
+    "to": [
+     0.0,
+     34.0
+    ],
+    "w": 4,
+    "color": "safeEdge"
+   },
+   {
+    "t": "line",
+    "from": [
+     0.0,
+     34.0
+    ],
+    "to": [
+     -17.0,
+     29.44
+    ],
+    "w": 4,
+    "color": "safeEdge"
+   },
+   {
+    "t": "line",
+    "from": [
+     -17.0,
+     29.44
+    ],
+    "to": [
+     -29.44,
+     17.0
+    ],
+    "w": 4,
+    "color": "safeEdge"
+   },
+   {
+    "t": "line",
+    "from": [
+     -29.44,
+     17.0
+    ],
+    "to": [
+     -34.0,
+     0.0
+    ],
+    "w": 4,
+    "color": "safeEdge"
+   },
+   {
+    "t": "arrow",
+    "from": [
+     -34.0,
+     0.0
+    ],
+    "to": [
+     -29.44,
+     -17.0
+    ],
+    "w": 4,
+    "color": "safeEdge",
+    "dash": false
+   },
+   {
+    "t": "player",
+    "role": "T",
+    "x": 8.8,
+    "y": -32.84
+   },
+   {
+    "t": "player",
+    "role": "D1",
+    "x": 0.0,
+    "y": -40.0
+   },
+   {
+    "t": "player",
+    "role": "D2",
+    "x": 0.98,
+    "y": -27.98
+   },
+   {
+    "t": "player",
+    "role": "H",
+    "x": -8.23,
+    "y": -32.99
+   },
+   {
+    "t": "player",
+    "role": "D3",
+    "x": 7.99,
+    "y": -45.3
+   }
+  ]
+ },
+ {
+  "id": "blue-beams_02b",
+  "objects": [
+   {
+    "t": "line",
+    "from": [
+     0.0,
+     -10.0
+    ],
+    "to": [
+     0.0,
+     -100.0
+    ],
+    "w": 13,
+    "color": "beam"
+   },
+   {
+    "t": "line",
+    "from": [
+     8.66,
+     5.0
+    ],
+    "to": [
+     86.6,
+     50.0
+    ],
+    "w": 13,
+    "color": "beam"
+   },
+   {
+    "t": "line",
+    "from": [
+     -8.66,
+     5.0
+    ],
+    "to": [
+     -86.6,
+     50.0
+    ],
+    "w": 13,
+    "color": "beam"
+   },
+   {
+    "t": "marker",
+    "asset": "game/ffxiv/enemy/large.png",
+    "x": 0,
+    "y": 0,
+    "size": 18
+   },
+   {
+    "t": "player",
+    "role": "T",
+    "x": 62.26,
+    "y": -43.59
+   },
+   {
+    "t": "player",
+    "role": "D1",
+    "x": 70.47,
+    "y": -28.47
+   },
+   {
+    "t": "player",
+    "role": "D2",
+    "x": 12.85,
+    "y": 72.88
+   },
+   {
+    "t": "player",
+    "role": "H",
+    "x": -68.88,
+    "y": -32.12
+   },
+   {
+    "t": "player",
+    "role": "D3",
+    "x": -59.89,
+    "y": -46.79
+   },
+   {
+    "t": "text",
+    "x": 0,
+    "y": 26,
+    "text": "CENTRE = DEATH",
+    "size": 5.5,
+    "color": "dangerEdge"
+   },
+   {
+    "t": "text",
+    "x": 0,
+    "y": 94,
+    "text": "angles illustrative",
+    "size": 4.5,
+    "color": "label"
+   }
+  ]
+ },
+ {
+  "id": "phantom-portals_01",
+  "objects": [
+   {
+    "t": "donut",
+    "x": 43.84,
+    "y": -43.84,
+    "r": 12,
+    "inner": 8,
+    "fill": "portal"
+   },
+   {
+    "t": "donut",
+    "x": 43.84,
+    "y": 43.84,
+    "r": 12,
+    "inner": 8,
+    "fill": "portal"
+   },
+   {
+    "t": "donut",
+    "x": -43.84,
+    "y": 43.84,
+    "r": 12,
+    "inner": 8,
+    "fill": "portal"
+   },
+   {
+    "t": "donut",
+    "x": -43.84,
+    "y": -43.84,
+    "r": 12,
+    "inner": 8,
+    "fill": "portal"
+   },
+   {
+    "t": "donut",
+    "x": 0,
+    "y": 0,
+    "r": 15,
+    "inner": 11,
+    "fill": "gold"
+   },
+   {
+    "t": "marker",
+    "asset": "game/ffxiv/enemy/large.png",
+    "x": 0,
+    "y": 0,
+    "size": 18
+   },
+   {
+    "t": "player",
+    "role": "T",
+    "x": 0,
+    "y": 14
+   },
+   {
+    "t": "player",
+    "role": "D1",
+    "x": -13,
+    "y": 14
+   },
+   {
+    "t": "player",
+    "role": "D2",
+    "x": 13,
+    "y": 14
+   },
+   {
+    "t": "player",
+    "role": "H",
+    "x": -7,
+    "y": 32
+   },
+   {
+    "t": "player",
+    "role": "D3",
+    "x": 7,
+    "y": 32
+   },
+   {
+    "t": "text",
+    "x": 0,
+    "y": -22,
+    "text": "INVINCIBLE",
+    "size": 6,
+    "color": "goldEdge"
+   },
+   {
+    "t": "text",
+    "x": 0,
+    "y": 94,
+    "text": "portal positions approximate",
+    "size": 4.5,
+    "color": "label"
+   }
+  ]
+ },
+ {
+  "id": "phantom-portals_02",
+  "objects": [
+   {
+    "t": "donut",
+    "x": 43.84,
+    "y": -43.84,
+    "r": 12,
+    "inner": 8,
+    "fill": "portal"
+   },
+   {
+    "t": "donut",
+    "x": 43.84,
+    "y": 43.84,
+    "r": 12,
+    "inner": 8,
+    "fill": "portal"
+   },
+   {
+    "t": "donut",
+    "x": -43.84,
+    "y": 43.84,
+    "r": 12,
+    "inner": 8,
+    "fill": "portal"
+   },
+   {
+    "t": "donut",
+    "x": -43.84,
+    "y": -43.84,
+    "r": 12,
+    "inner": 8,
+    "fill": "portal"
+   },
+   {
+    "t": "circle",
+    "x": 40.072,
+    "y": -35.072,
+    "r": 3.5,
+    "fill": "minion"
+   },
+   {
+    "t": "circle",
+    "x": 32.072,
+    "y": -30.072000000000003,
+    "r": 3.5,
+    "fill": "minion"
+   },
+   {
+    "t": "circle",
+    "x": 40.072,
+    "y": 35.072,
+    "r": 3.5,
+    "fill": "minion"
+   },
+   {
+    "t": "circle",
+    "x": 32.072,
+    "y": 40.072,
+    "r": 3.5,
+    "fill": "minion"
+   },
+   {
+    "t": "circle",
+    "x": -30.072000000000003,
+    "y": 35.072,
+    "r": 3.5,
+    "fill": "minion"
+   },
+   {
+    "t": "circle",
+    "x": -38.072,
+    "y": 40.072,
+    "r": 3.5,
+    "fill": "minion"
+   },
+   {
+    "t": "circle",
+    "x": -30.072000000000003,
+    "y": -35.072,
+    "r": 3.5,
+    "fill": "minion"
+   },
+   {
+    "t": "circle",
+    "x": -38.072,
+    "y": -30.072000000000003,
+    "r": 3.5,
+    "fill": "minion"
+   },
+   {
+    "t": "marker",
+    "asset": "game/ffxiv/enemy/large.png",
+    "x": 0,
+    "y": 0,
+    "size": 18
+   },
+   {
+    "t": "player",
+    "role": "T",
+    "x": -29.7,
+    "y": 29.7
+   },
+   {
+    "t": "player",
+    "role": "D1",
+    "x": -32.53,
+    "y": -32.53
+   },
+   {
+    "t": "player",
+    "role": "D2",
+    "x": 32.53,
+    "y": -32.53
+   },
+   {
+    "t": "player",
+    "role": "H",
+    "x": 0,
+    "y": 22
+   },
+   {
+    "t": "player",
+    "role": "D3",
+    "x": 32.53,
+    "y": 32.53
+   },
+   {
+    "t": "arrow",
+    "from": [
+     12.73,
+     -12.73
+    ],
+    "to": [
+     25.46,
+     -25.46
+    ],
+    "w": 4,
+    "color": "safeEdge",
+    "dash": false
+   },
+   {
+    "t": "arrow",
+    "from": [
+     12.73,
+     12.73
+    ],
+    "to": [
+     25.46,
+     25.46
+    ],
+    "w": 4,
+    "color": "safeEdge",
+    "dash": false
+   },
+   {
+    "t": "arrow",
+    "from": [
+     -12.73,
+     12.73
+    ],
+    "to": [
+     -25.46,
+     25.46
+    ],
+    "w": 4,
+    "color": "safeEdge",
+    "dash": false
+   },
+   {
+    "t": "arrow",
+    "from": [
+     -12.73,
+     -12.73
+    ],
+    "to": [
+     -25.46,
+     -25.46
+    ],
+    "w": 4,
+    "color": "safeEdge",
+    "dash": false
+   }
+  ]
+ },
+ {
+  "id": "phantom-portals_03",
+  "objects": [
+   {
+    "t": "donut",
+    "x": 43.84,
+    "y": -43.84,
+    "r": 12,
+    "inner": 8,
+    "fill": "portal"
+   },
+   {
+    "t": "donut",
+    "x": 43.84,
+    "y": 43.84,
+    "r": 12,
+    "inner": 8,
+    "fill": "portal"
+   },
+   {
+    "t": "circle",
+    "x": -30,
+    "y": 22,
+    "r": 12,
+    "fill": "puddle",
+    "dash": true
+   },
+   {
+    "t": "circle",
+    "x": 16,
+    "y": 40,
+    "r": 12,
+    "fill": "puddle",
+    "dash": true
+   },
+   {
+    "t": "circle",
+    "x": -52,
+    "y": -8,
+    "r": 12,
+    "fill": "puddle",
+    "dash": true
+   },
+   {
+    "t": "text",
+    "x": -30,
+    "y": 22,
+    "text": "20s",
+    "size": 5,
+    "color": "puddleEdge"
+   },
+   {
+    "t": "text",
+    "x": 16,
+    "y": 40,
+    "text": "20s",
+    "size": 5,
+    "color": "puddleEdge"
+   },
+   {
+    "t": "text",
+    "x": -52,
+    "y": -8,
+    "text": "20s",
+    "size": 5,
+    "color": "puddleEdge"
+   },
+   {
+    "t": "marker",
+    "asset": "game/ffxiv/enemy/large.png",
+    "x": 0,
+    "y": 0,
+    "size": 18
+   },
+   {
+    "t": "player",
+    "role": "T",
+    "x": 12,
+    "y": -34
+   },
+   {
+    "t": "player",
+    "role": "D1",
+    "x": -14,
+    "y": -30
+   },
+   {
+    "t": "player",
+    "role": "D2",
+    "x": -30,
+    "y": 26
+   },
+   {
+    "t": "player",
+    "role": "H",
+    "x": 24,
+    "y": 18
+   },
+   {
+    "t": "player",
+    "role": "D3",
+    "x": 36,
+    "y": 6
+   },
+   {
+    "t": "circle",
+    "x": -5,
+    "y": 9,
+    "r": 4,
+    "fill": "ball"
+   },
+   {
+    "t": "arrow",
+    "from": [
+     -2,
+     4
+    ],
+    "to": [
+     -24,
+     22
+    ],
+    "w": 4,
+    "color": "ballEdge",
+    "dash": true
+   },
+   {
+    "t": "circle",
+    "x": -30,
+    "y": 26,
+    "r": 10,
+    "fill": "danger"
+   },
+   {
+    "t": "text",
+    "x": -30,
+    "y": 48,
+    "text": "BALL + PUDDLE = DEAD",
+    "size": 5,
+    "color": "dangerEdge"
+   }
+  ]
+ },
+ {
+  "id": "phantom-portals_04",
+  "objects": [
+   {
+    "t": "marker",
+    "asset": "game/ffxiv/enemy/large.png",
+    "x": 0,
+    "y": 0,
+    "size": 18
+   },
+   {
+    "t": "player",
+    "role": "T",
+    "x": -36,
+    "y": -30
+   },
+   {
+    "t": "player",
+    "role": "D1",
+    "x": 34,
+    "y": -34
+   },
+   {
+    "t": "player",
+    "role": "D2",
+    "x": 38,
+    "y": 30
+   },
+   {
+    "t": "player",
+    "role": "H",
+    "x": 0,
+    "y": 40
+   },
+   {
+    "t": "player",
+    "role": "D3",
+    "x": -38,
+    "y": 34
+   },
+   {
+    "t": "arrow",
+    "from": [
+     -30,
+     -25
+    ],
+    "to": [
+     -8,
+     -6
+    ],
+    "w": 4,
+    "color": "safeEdge",
+    "dash": false
+   },
+   {
+    "t": "arrow",
+    "from": [
+     28,
+     -28
+    ],
+    "to": [
+     8,
+     -6
+    ],
+    "w": 4,
+    "color": "safeEdge",
+    "dash": false
+   },
+   {
+    "t": "arrow",
+    "from": [
+     32,
+     25
+    ],
+    "to": [
+     9,
+     7
+    ],
+    "w": 4,
+    "color": "safeEdge",
+    "dash": false
+   },
+   {
+    "t": "arrow",
+    "from": [
+     -32,
+     28
+    ],
+    "to": [
+     -9,
+     7
+    ],
+    "w": 4,
+    "color": "safeEdge",
+    "dash": false
+   },
+   {
+    "t": "text",
+    "x": 0,
+    "y": -60,
+    "text": "BACK TO HIS FEET",
+    "size": 6,
+    "color": "safeEdge"
+   },
+   {
+    "t": "text",
+    "x": 0,
+    "y": 72,
+    "text": "≥ 1:40 LEFT AFTER LAST SET",
+    "size": 5.5,
+    "color": "label"
+   }
+  ]
+ },
+ {
+  "id": "phantom-spring_01",
+  "objects": [
+   {
+    "t": "circle",
+    "x": 0.0,
+    "y": -66.0,
+    "r": 13,
+    "fill": "water"
+   },
+   {
+    "t": "circle",
+    "x": 46.67,
+    "y": -46.67,
+    "r": 13,
+    "fill": "water"
+   },
+   {
+    "t": "circle",
+    "x": 66.0,
+    "y": 0.0,
+    "r": 13,
+    "fill": "water"
+   },
+   {
+    "t": "circle",
+    "x": 46.67,
+    "y": 46.67,
+    "r": 13,
+    "fill": "water"
+   },
+   {
+    "t": "circle",
+    "x": 0.0,
+    "y": 66.0,
+    "r": 13,
+    "fill": "water"
+   },
+   {
+    "t": "circle",
+    "x": -46.67,
+    "y": 46.67,
+    "r": 13,
+    "fill": "water"
+   },
+   {
+    "t": "circle",
+    "x": -66.0,
+    "y": 0.0,
+    "r": 13,
+    "fill": "water"
+   },
+   {
+    "t": "circle",
+    "x": -46.67,
+    "y": -46.67,
+    "r": 13,
+    "fill": "water"
+   },
+   {
+    "t": "circle",
+    "x": 0,
+    "y": 12,
+    "r": 33,
+    "fill": "safe",
+    "dash": true
+   },
+   {
+    "t": "marker",
+    "asset": "game/ffxiv/enemy/large.png",
+    "x": 0,
+    "y": 0,
+    "size": 18
+   },
+   {
+    "t": "player",
+    "role": "T",
+    "x": 0,
+    "y": 14
+   },
+   {
+    "t": "player",
+    "role": "D1",
+    "x": -13,
+    "y": 14
+   },
+   {
+    "t": "player",
+    "role": "D2",
+    "x": 13,
+    "y": 14
+   },
+   {
+    "t": "player",
+    "role": "H",
+    "x": -7,
+    "y": 32
+   },
+   {
+    "t": "player",
+    "role": "D3",
+    "x": 7,
+    "y": 32
+   },
+   {
+    "t": "text",
+    "x": 0,
+    "y": -88,
+    "text": "VORTICES HURT",
+    "size": 5.5,
+    "color": "waterEdge"
+   }
+  ]
+ }
+]
